@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pavo-website';
+  version = '0.1.0';
+
+  constructor() {
+    // setTimeout(() =>  {
+    //   this.title = "Let's start building"
+    // }, 1000);
+  }
 }

@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h1 class="text-center text-primary">Todo List by Mg-Todo List</h1>
+  <!-- Todos component -->
+  <div class="d-flex justify-content-center my-5 col-lg">
+    <div class="card">
+      <div class="card-body">
+        <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+        <h4 class="mt-5 mb-3 text-success">Your Todos</h4>
+
+        <!-- conditional statement to display something when data is not present -->
+        <div *ngIf="this.todos.length === 0; else elseBlock">
+          No Todos to display
+        </div>
+        <ng-template #elseBlock>
+          <div *ngFor="let todo of todos">
+            <!-- todo-Item component -->
+            <app-todo-item
+              [todo]="todo"
+              (todoCheckbox)="toggleTodo($event)"
+              (todoDelete)="deleteTodo($event)"
+            ></app-todo-item>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

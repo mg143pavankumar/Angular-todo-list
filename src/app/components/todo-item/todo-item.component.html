@@ -1,0 +1,9 @@
+<div class = "my-5">
+    <h5 [ngClass]="{'strike': !todo.active}" >{{todo.title}}</h5>
+    <p [ngClass]="{'strike': !todo.active}">{{todo.desc}}</p>
+    <div class = "form-group form-check mb-3" >
+        <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox" [checked]="!todo.active"  (click) = "onCheckboxClick(todo)" >
+        <label class="form-check-label" form = "exampleCheck">Mark as done</label>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="onClickDone(todo)"  >Delete</button>
+</div>
